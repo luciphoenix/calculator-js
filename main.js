@@ -34,9 +34,14 @@ function addKeyToDisplay(e){
   const value = e.target.getAttribute("data-key")
   if (!value) return
   if(value == 'del') return deleteOnce()
+    if(value == "ac") return clearScreen()
   display.textContent += value;   
 }
 
 function deleteOnce() {
-  console.log(display.textContent = display.textContent.slice(0,-1))
+  display.textContent = display.textContent.slice(0,-1)
+}
+
+function clearScreen() {
+  display.textContent = ''
 }
