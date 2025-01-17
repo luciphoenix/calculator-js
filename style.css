@@ -9,7 +9,9 @@
     font-size: clamp(1rem, calc(0.75rem + 1.5vw) , 1.5rem);
     color: white;
 }
-
+::selection{
+    background-color: inherit;
+}
 .calculator-container{
     background-color: rgb(37, 35, 35);
     max-width: 560px;
@@ -52,6 +54,7 @@
     font-weight: 900;
     flex: auto;
     width: 3rem;
+    cursor: pointer;
 
     display: flex;
     justify-content: center;

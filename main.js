@@ -15,11 +15,28 @@ function operate(num1, num2, operator) {
     case "-":
       return subtract(num1, num2);
       break;
-    case "*":
+    case "x":
       return multiply(num1, num2);
       break;
     case "/":
       return divide(num1, num2);
       break;
   }
+}
+
+
+const key = document.querySelector('.keyboard')
+const display = document.querySelector(".output")
+
+key.addEventListener("click", addKeyToDisplay)
+
+function addKeyToDisplay(e){
+  const value = e.target.getAttribute("data-key")
+  if (!value) return
+  if(value == 'del') return deleteOnce()
+  display.textContent += value;   
+}
+
+function deleteOnce() {
+  console.log(display.textContent = display.textContent.slice(0,-1))
 }
