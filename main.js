@@ -7,19 +7,21 @@ let num1 = null;
 let num2 = null;
 let operator = null;
 
-function operate(num1, num2, operator) {
-  switch (operator) {
+function operate(arg) {
+  console.log(args = arg.split(" "));
+  
+  switch (args[1]) {
     case "+":
-      return add(num1, num2);
+      return display.textContent = add(+args[0], +args[2]);
       break;
     case "-":
-      return subtract(num1, num2);
+      return display.textContent = subtract(args[0], args[2]);
       break;
     case "x":
-      return multiply(num1, num2);
+      return display.textContent = multiply(args[0], args[2]);
       break;
     case "/":
-      return divide(num1, num2);
+      return display.textContent = divide(args[0], args[2]);
       break;
   }
 }
@@ -34,7 +36,8 @@ function addKeyToDisplay(e){
   const value = e.target.getAttribute("data-key")
   if (!value) return
   if(value == 'del') return deleteOnce()
-    if(value == "ac") return clearScreen()
+  if(value == "ac") return clearScreen()
+  if(value === ' = ' ) return operate(display.textContent)
   display.textContent += value;   
 }
 
